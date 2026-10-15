@@ -4,8 +4,21 @@ import Link from 'next/link';
 import { ShoppingBag, Compass } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Addis Eats | Authentic Ethiopian Food Delivery',
-  description: 'Order sizzling Tibs, traditional Beyaynetu, and authentic dishes delivered hot in Addis Ababa.',
+  title: {
+    default: 'Addis Eats | Authentic Ethiopian Food Delivery in Addis Ababa',
+    template: '%s | Addis Eats',
+  },
+  description: 'Order authentic Beyaynetu, sizzling Tibs, and Doro Wat online with instant Telebirr & CBE digital banking checkout in Addis Ababa.',
+  keywords: ['Ethiopian food delivery', 'Addis Ababa restaurants', 'Tibs', 'Beyaynetu', 'Telebirr food app', 'Addis Eats'],
+  authors: [{ name: 'Ekram Ahmed' }],
+  openGraph: {
+    title: 'Addis Eats | Authentic Ethiopian Food Delivery',
+    description: 'Savor traditional homemade flavors delivered hot across Bole, 22, and Piassa.',
+    url: 'https://addiseats.et',
+    siteName: 'Addis Eats',
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -48,10 +61,10 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
             <div>
               <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                <span className="text-[#C85A32]">🇪🇹</span> Addis Eats
+                <span className="text-[#C85A32]">🇪🇹</span> Addis Eats Platform
               </h3>
               <p className="text-stone-400">
-                Bringing the authentic flavors of Addis Ababa straight to your doorstep with lightning-fast delivery and secure local banking.
+                Powered by Next.js App Router, Edge Middleware, and secure Ethiopian digital banking infrastructure.
               </p>
             </div>
             <div>
@@ -62,8 +75,8 @@ export default function RootLayout({
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-3">Supported Payment Partners</h4>
-              <p className="text-stone-400 mb-2">Telebirr, Commercial Bank of Ethiopia (CBE), Awash Bank & Dashen Bank.</p>
+              <h4 className="text-white font-semibold mb-3">Environment & Security</h4>
+              <p className="text-stone-400 mb-1">Region: {process.env.NEXT_PUBLIC_DEFAULT_CITY || 'Addis Ababa'}</p>
               <p className="text-stone-500 text-xs">© 2026 Addis Eats. All rights reserved.</p>
             </div>
           </div>
